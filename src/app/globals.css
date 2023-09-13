@@ -2,7 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities{
+  ._container {
+      @apply px-4 sm:px-8 lg:px-12 2xl:px-16 mx-auto max-w-[96rem] ss:max-w-screen-ss sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl;
+    }
+  
+    ._headings {
+      @apply text-center text-[2rem] font-semibold text-gray dark:text-white;
+    }
+}
+
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +41,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
+
+
