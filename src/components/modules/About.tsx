@@ -4,16 +4,16 @@ import yogesh from "../../assets/yogesh-khadka.jpeg";
 
 const About = () => {
   return (
-    <section className="px-32 mt-24">
+    <section id="about" className="_spacing">
       <div className="_headings">About</div>
 
       <div className="flex gap-8 justify-between mt-16 items-center">
         {/* Biography Section */}
         <div className="flex-[0.7]">
-          <h1 className="text-gray text-[1.1rem] uppercase py-4 dark:text-cream">
+          <h1 className="text-gray text-[1.1rem] uppercase py-4 dark:text-light">
             Biography
           </h1>
-          <p className="text-gray text-justify dark:text-cream">
+          <p className="text-gray text-justify dark:text-light">
             Passionate about learning and development, with the desire to learn
             Frontend Development skills and apply them, adding value to the
             firm. As I studied Electronics and Communication Engineering at the

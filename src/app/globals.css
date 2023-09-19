@@ -16,6 +16,10 @@
     ._headings {
       @apply text-center text-[2rem] font-semibold text-gray dark:text-white;
     }
+
+    ._spacing{
+      @apply  px-6 lg:px-32 mt-24;
+    }
 }
 
 

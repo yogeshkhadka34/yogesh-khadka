@@ -1,14 +1,17 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { useSearchParams } from "next/navigation";
 
 const Contacts = () => {
-  const [state, handleSubmit] = useForm("mrgwlgav");
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM as string);
+  const searchParams = useSearchParams();
+  const resume = searchParams.get("resume");
   // if (state.succeeded) {
   //   return <p>Thanks for joining!</p>;
   // }
   return (
     <>
-      <section className="mt-24 px-24 dark:bg-dark">
+      <section id="contacts" className="_spacing dark:bg-dark">
         <div className="px-6 py-12 mx-auto">
           <div className="lg:flex lg:items-center lg:-mx-6">
             <div className="lg:w-1/2 lg:mx-6">
@@ -21,7 +24,7 @@ const Contacts = () => {
               <Icons />
             </div>
 
-            <div className="lg:w-1/2 lg:mx-6">
+            <div className="lg:w-1/2 lg:mx-6 mt-10 lg:mt-0">
               <div className="w-full px-8 py-6 mx-auto overflow-hidden bg-light rounded-lg shadow-2xl dark:bg-gray lg:max-w-xl shadow-gray dark:shadow-black/50">
                 {/* <h1 className="text-lg font-medium text-dark">
                   Message directly
@@ -42,7 +45,7 @@ const Contacts = () => {
                         type="text"
                         placeholder="John Doe"
                         name="name"
-                        className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-light border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-cream dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-light border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-300 dark:text-cream dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       <ValidationError
                         prefix="Full Name"
@@ -59,7 +62,7 @@ const Contacts = () => {
                         type="email"
                         name="email"
                         placeholder="johndoe@example.com"
-                        className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-light border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-cream dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-light border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-300 dark:text-cream dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       <ValidationError
                         prefix="Email"
@@ -73,7 +76,7 @@ const Contacts = () => {
                         Message
                       </label>
                       <textarea
-                        className="block resize-y w-full h-8 px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-light border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-cream dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block resize-y w-full h-8 px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-light border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 dark:bg-gray-300 dark:text-cream dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                         placeholder="Message"
                         name="message"
                       ></textarea>
@@ -89,7 +92,9 @@ const Contacts = () => {
                       disabled={state.submitting}
                       className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                     >
-                      Send Message Directly
+                      {resume == "1"
+                        ? "Request Resume"
+                        : "Send Message Directly"}
                     </button>
                   </form>
                 )}
@@ -112,21 +117,21 @@ const ContactsList = () => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
           />
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
           />
         </svg>
 
-        <span className="mx-2 text-dark truncate w-72 dark:text-gray">
+        <span className="mx-2 text-dark truncate w-72 dark:text-light">
           Bhansar Marg, Teku Kathmandu, Nepal
         </span>
       </p>
@@ -138,16 +143,16 @@ const ContactsList = () => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
           />
         </svg>
 
-        <span className="mx-2 text-dark truncate w-72 dark:text-gray">
+        <span className="mx-2 text-dark truncate w-72 dark:text-light">
           +977-9825941683
         </span>
       </p>
@@ -159,16 +164,16 @@ const ContactsList = () => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
           />
         </svg>
 
-        <span className="mx-2 text-dark truncate w-72 dark:text-gray">
+        <span className="mx-2 text-dark truncate w-72 dark:text-light">
           yogeshkhadka34@gmail.com
         </span>
       </p>
@@ -183,8 +188,9 @@ const Icons = () => {
 
       <div className="flex mt-4 -mx-1.5 ">
         <a
-          className="mx-1.5 dark:hover:text-blue-400 text-gray transition-colors duration-300 transform hover:text-blue-500"
-          href="#"
+          className="mx-1.5 dark:hover:text-blue-400 text-gray dark:text-light transition-colors duration-300 transform hover:text-blue-500"
+          href="https://www.linkedin.com/in/yogesh-khadka-208374146/"
+          target="_blank"
         >
           <svg
             className="w-8 h-8"
@@ -205,8 +211,9 @@ const Icons = () => {
         </a>
 
         <a
-          className="mx-1.5 dark:hover:text-blue-400 text-gray transition-colors duration-300 transform hover:text-blue-500"
-          href="#"
+          className="mx-1.5 dark:hover:text-blue-400 text-gray dark:text-light transition-colors duration-300 transform hover:text-blue-500"
+          href="https://www.facebook.com/yogesh.khadka.520"
+          target="_blank"
         >
           <svg
             className="w-8 h-8"
@@ -222,8 +229,9 @@ const Icons = () => {
         </a>
 
         <a
-          className="mx-1.5 dark:hover:text-blue-400 text-gray transition-colors duration-300 transform hover:text-blue-500"
-          href="#"
+          className="mx-1.5 dark:hover:text-blue-400 text-gray dark:text-light transition-colors duration-300 transform hover:text-blue-500"
+          href="https://www.instagram.com/yogesh_khadka/"
+          target="_blank"
         >
           <svg
             className="w-8 h-8"

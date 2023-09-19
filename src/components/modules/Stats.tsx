@@ -10,7 +10,7 @@ const Stats = () => {
           className="flex flex-col justify-center items-center"
         >
           <h1 className="text-[2rem] font-bold text-primary">{stat.number}</h1>
-          <p className="text-[1rem] font-semibold text-gray dark:text-white lg:text-[1.1rem]">
+          <p className="text-[1rem] font-medium text-gray dark:text-white lg:text-[1.1rem]">
             {stat.name}
           </p>
         </div>
