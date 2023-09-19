@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   const [theme, setTheme] = React.useState("Light");
+  const [mobileMenu, setMobileMenu] = React.useState(false);
 
   const handleToggle = (theme: string) => {
     if (theme === "Light") {
@@ -31,9 +32,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="_container mt-4 py-2 flex flex-col md:flex-row md:justify-between md:items-center  bg-light dark:bg-dark  text-gray dark:text-white">
+    <header className="_container relative mt-4 py-2 flex  justify-between items-center  bg-light dark:bg-dark  text-gray dark:text-white">
       {/* Navigation */}
-      <nav className="flex gap-6 text-[0.95rem] font-base">
+      <nav className="hidden md:flex gap-6 text-[0.95rem] font-base">
         {navLinks.map((link, i) => (
           <Link
             key={link.id + i}
@@ -47,6 +48,37 @@ const Navbar = () => {
         ))}
       </nav>
 
+      {/* Mobile Navigation */}
+      {/*  */}
+      <button
+        onClick={() => setMobileMenu((prev) => !prev)}
+        className="block md:hidden"
+      >
+        {mobileMenu ? (
+          <Icon
+            icon="pajamas:close"
+            style={{ height: "1.5rem", width: "1.5rem" }}
+          />
+        ) : (
+          <Icon
+            icon="pajamas:hamburger"
+            style={{ height: "1.5rem", width: "1.5rem" }}
+          />
+        )}
+      </button>
+
+      {mobileMenu && (
+        <nav className="absolute top-14 left-auto right-auto w-[90%] rounded-lg flex flex-col gap-3 justify-center items-center px-4 py-8 bg-cream">
+          {navLinks.map((link, i) => (
+            <Link key={link.id + i} href={link.id == "/" ? "/" : `#${link.id}`}>
+              <p className="text-[1.1rem] text-gray-700 hover:text-gray  hover:font-semibold">
+                {link.name}
+              </p>
+            </Link>
+          ))}
+        </nav>
+      )}
+
       {/* Logo */}
       <Link
         href="/"
@@ -56,18 +88,19 @@ const Navbar = () => {
       </Link>
 
       {/* Social Icons */}
-      <nav className="flex gap-6 items-center">
-        {icons.map((icon, i) => (
-          <Link href={icon.href} target="_blank" key={icon.id + 1}>
-            {" "}
-            <Icon
-              icon={icon.name}
-              style={{ height: "1.5rem", width: "1.5rem" }}
-              className="dark:text-white"
-            />
-          </Link>
-        ))}
-
+      <nav className="flex gap-10 items-center">
+        <div className="hidden md:flex md:gap-6">
+          {icons.map((icon, i) => (
+            <Link href={icon.href} target="_blank" key={icon.id + 1}>
+              {" "}
+              <Icon
+                icon={icon.name}
+                style={{ height: "1.5rem", width: "1.5rem" }}
+                className="dark:text-white"
+              />
+            </Link>
+          ))}
+        </div>
         {/* Theme Section */}
         {theme === "Light" ? (
           <button

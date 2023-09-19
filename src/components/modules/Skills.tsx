@@ -8,10 +8,10 @@ interface SkillsProps {
 
 const Skills = () => {
   return (
-    <section className="mt-24 py-4">
+    <section className="mt-16 md:mt-24 py-4">
       <h1 className="_headings">Skills</h1>
       {/* Sills components */}
-      <div className="mt-12 py-4 flex flex-wrap gap-12 justify-center items-center">
+      <div className="mt-6 md:mt-12 py-4 flex flex-wrap gap-8 md:gap-12 justify-center items-center">
         {skills.map((skill) => (
           <h1
             key={skill.id}

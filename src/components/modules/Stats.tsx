@@ -2,7 +2,7 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <section className="flex justify-between items-center mt-8 px-8 lg:px-32">
+    <section className="flex justify-center md:justify-between gap-8 items-center mt-8 px-8 flex-wrap lg:px-32">
       {/* Stats Section */}
       {stats.map((stat) => (
         <div

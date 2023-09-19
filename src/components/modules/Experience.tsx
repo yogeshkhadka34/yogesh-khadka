@@ -8,14 +8,14 @@ const Experience = () => {
       {/* Cards Section */}
       {details.map((detail) => (
         <div key={detail.id} className="mt-8 flex flex-col gap-1 py-4">
-          <h1 className="text-[1.4rem] text-gray dark:text-light">
+          <h1 className="text-[1.2rem] font-medium md:font-base md:text-[1.4rem] text-gray dark:text-light">
             {detail.post}{" "}
             <span className="text-primary">{`@${detail.company}`}</span>
           </h1>
           <p className="text-[0.9rem]  text-gray-600 dark:text-light">
             {`${detail.date} | ${detail.location}`}
           </p>
-          <p className="text-gray-700 text-justify text-[0.97rem] max-w-[48rem] mt-2 dark:text-cream">
+          <p className="text-gray-600 text-justify text-[0.97rem] max-w-[48rem] mt-2 dark:text-cream">
             {detail.description}
           </p>
         </div>

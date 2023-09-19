@@ -7,7 +7,7 @@ const About = () => {
     <section id="about" className="_spacing">
       <div className="_headings">About</div>
 
-      <div className="flex gap-8 justify-between mt-16 items-center">
+      <div className="flex flex-col justify-center md:flex-row gap-8 md:justify-between mt-6 md:mt-16 items-center">
         {/* Biography Section */}
         <div className="flex-[0.7]">
           <h1 className="text-gray text-[1.1rem] uppercase py-4 dark:text-light">
@@ -37,7 +37,7 @@ const About = () => {
         </div>
 
         {/* Image Section */}
-        <div className="flex-[0.3] ml-16 border-[1px] border-gray relative bg-light dark:bg-gray rounded-lg h-[16rem] w-[16rem]">
+        <div className="flex-[0.3] md:ml-16 border-[1px] border-gray relative bg-light dark:bg-gray rounded-lg h-[16rem] w-[16rem]">
           <Image src={yogesh} alt="yogesh khadka" className="p-8" />
           <div className="bg-gray h-[101%] w-[101%] absolute -bottom-1 -right-1 -z-10 rounded-lg" />
         </div>

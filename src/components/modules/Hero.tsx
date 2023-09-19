@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className=" lg:mt-4 md:mt-12 lg:h-[calc(65vh)] xl:h-[74vh] 2xl:h-[unset] portrait:h-[unset] py-4 flex justify-between gap-12 items-center ">
+    <section className=" mt-6 lg:mt-4 md:mt-12 lg:h-[calc(65vh)] xl:h-[74vh] 2xl:h-[unset] portrait:h-[unset] py-4 flex flex-col-reverse md:flex-row justify-start md:justify-between gap-12 items-center ">
       {/* Left Image Section */}
       <div className="flex-1 mr-12">
         <HeroImage />
@@ -14,9 +14,11 @@ const Hero = () => {
 
       {/* Right Image  Section */}
       <div className="flex-1">
-        <h1 className="text-[2.3rem] md:text-[1.8rem] xl:text-[2.5rem] text-gray dark:text-light font-[400] font-secondary">
-          Hi, I'm{" "}
-          <span className="font-[700] font-secondary">Yogesh Khadka</span>
+        <h1 className="text-[1.8rem] xl:text-[2.5rem] text-gray dark:text-light font-[400] font-secondary">
+          Hi, I'm <br className="block md:hidden" />
+          <span className="font-[700] font-secondary text-[2.3rem] md:text-[1.8rem] xl:text-[2.5rem] text-gray dark:text-light ">
+            Yogesh Khadka
+          </span>
         </h1>
         <p className="mt-1 font-bold font-secondary text-[#536DFE] text-[1.2rem] md:text-[1rem] lg:text-[1.2rem]">
           Frontend Developer

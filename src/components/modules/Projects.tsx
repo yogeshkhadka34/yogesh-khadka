@@ -16,7 +16,7 @@ const Projects = () => {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="relative my-16 bg-light dark:bg-gray flex flex-row-reverse justify-between gap-8 items-center mt-8 px-8 py-8 border-[1px] border-gray rounded-lg"
+          className="relative my-16 bg-light dark:bg-gray flex flex-col justify-start md:flex-row-reverse md:justify-between gap-8 items-center mt-8 px-8 py-8 border-[1px] border-gray rounded-lg"
         >
           <div className="absolute h-[101%] w-[100%] bg-gray -z-10 -right-1 -bottom-1 rounded-lg" />
           {/* Left Image component */}
@@ -39,7 +39,9 @@ const Projects = () => {
               <p className="italic text-[0.9rem] dark:text-cream text-[#585858] rounded-full">
                 {project.tags}
               </p>
-              <p className="text-gray dark:text-light">{project.desc}</p>
+              <p className="text-gray-600 dark:text-light mt-2">
+                {project.desc}
+              </p>
             </div>
 
             <div>

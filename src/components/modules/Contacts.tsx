@@ -12,10 +12,11 @@ const Contacts = () => {
   return (
     <>
       <section id="contacts" className="_spacing dark:bg-dark">
-        <div className="px-6 py-12 mx-auto">
+        <div className="md:px-6 py-12 mx-auto">
           <div className="lg:flex lg:items-center lg:-mx-6">
             <div className="lg:w-1/2 lg:mx-6">
-              <h1 className="text-2xl font-semibold text-gray capitalize dark:text-white lg:text-3xl">
+              <h1 className="_headings md:hidden pb-6">Contacts</h1>
+              <h1 className="hidden md:flex text-2xl font-semibold text-gray capitalize dark:text-white lg:text-3xl">
                 Contacts
               </h1>
 
@@ -24,7 +25,7 @@ const Contacts = () => {
               <Icons />
             </div>
 
-            <div className="lg:w-1/2 lg:mx-6 mt-10 lg:mt-0">
+            <div className="md:w-1/2 md:mx-6 mt-10 md:mt-0">
               <div className="w-full px-8 py-6 mx-auto overflow-hidden bg-light rounded-lg shadow-2xl dark:bg-gray lg:max-w-xl shadow-gray dark:shadow-black/50">
                 {/* <h1 className="text-lg font-medium text-dark">
                   Message directly
