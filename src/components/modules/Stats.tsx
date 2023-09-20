@@ -20,9 +20,9 @@ const Stats = () => {
 };
 
 const stats = [
-  { id: 1, number: "6+", name: "Projects Completed" },
+  { id: 1, number: "5+", name: "Projects Completed" },
   { id: 2, number: "2+", name: "Clients Satisfied" },
-  { id: 3, number: "1+", name: "Years of Experience" },
+  { id: 3, number: "1", name: "Year of Experience" },
 ];
 
 export default Stats;

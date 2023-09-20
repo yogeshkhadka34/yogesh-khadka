@@ -4,6 +4,7 @@ import manage from "@/assets/projects/manage.png";
 import loksewa from "@/assets/projects/loksewa.png";
 import hoobank from "@/assets/projects/hoobank.png";
 import portfolio from "@/assets/projects/Portfolio.png";
+import ecommerce from "@/assets/projects/ecommerce.png";
 import React from "react";
 import Link from "next/link";
 
@@ -92,6 +93,16 @@ const projects = [
     img: portfolio,
     tags: "NextJS , Typescript, Tailwind CSS",
     desc: "This is my digital playground where I showcase my journey, projects, and skills as I embark on this exciting career path.",
+  },
+  {
+    id: 5,
+    code: 1,
+    github: "https://github.com/yogeshkhadka34/commerce_js ",
+    name: "Ecommerce Website",
+    url: " https://yogesh-commercejs.netlify.app/  ",
+    img: ecommerce,
+    tags: "React, Material UI, Commerce.js backend",
+    desc: "Ecommerce website for shoes brand",
   },
   {
     id: 2,

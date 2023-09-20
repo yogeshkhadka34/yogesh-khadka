@@ -82,7 +82,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link
         href="/"
-        className="cursor-pointer rounded-full w-[3.25rem] h-[3.25rem] p-2 bg-gray hover:bg-black text-white dark:bg-white dark:text-gray dark:border-1 border-black"
+        className="flex items-center justify-center cursor-pointer rounded-full w-[3.25rem] h-[3.25rem] p-2 bg-gray hover:bg-black text-white dark:bg-white dark:text-gray dark:border-1 border-black"
       >
         <h1 className="font-bold text-[1.1rem] lg:text-[1.5rem]">YK</h1>
       </Link>
