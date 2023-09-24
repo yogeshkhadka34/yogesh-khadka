@@ -1,9 +1,9 @@
 import React from "react";
 import HeroImage from "@/components/ui/HeroImage";
-import { useSearchQuery } from "@/hooks/useSearchQuery";
+import useQueryParams from "@/hooks/useQueryParams";
 
 const Hero = () => {
-  const { setQuery } = useSearchQuery();
+  const { addParam } = useQueryParams();
   return (
     <section className=" mt-6 lg:mt-4 md:mt-12 lg:h-[calc(65vh)] xl:h-[74vh] 2xl:h-[unset] portrait:h-[unset] py-4 flex flex-col-reverse md:flex-row justify-start md:justify-between gap-12 items-center ">
       {/* Left Image Section */}
@@ -32,13 +32,15 @@ const Hero = () => {
         {/* Buttons */}
         <div className="mt-8 py-4 ">
           <a
-            href="?resume=1#contacts"
+            href="#contacts"
+            onClick={() => addParam("resume", "1")}
             className="px-6 py-2 mr-4 rounded-sm bg-gray dark:bg-white text-white dark:text-gray hover:bg-dark dark:hover:bg-cream"
           >
             Resume
           </a>
           <a
-            href="?resume=0#contacts"
+            href="#contacts"
+            onClick={() => addParam("resume", "0")}
             className="mx-2 dark:text-white text-gray  hover:underline duration-1000"
           >
             Contacts

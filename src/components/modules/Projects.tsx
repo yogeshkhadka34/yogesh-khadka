@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Icon } from "@iconify/react";
 import manage from "@/assets/projects/manage.png";
 import loksewa from "@/assets/projects/loksewa.png";
@@ -7,6 +6,7 @@ import portfolio from "@/assets/projects/Portfolio.png";
 import ecommerce from "@/assets/projects/ecommerce.png";
 import React from "react";
 import Link from "next/link";
+import Image from "@/components/common/StaticImage";
 
 const Projects = () => {
   return (

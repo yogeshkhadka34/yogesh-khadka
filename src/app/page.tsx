@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Hero from "@/components/modules/Hero";
 import Stats from "@/components/modules/Stats";
 import Skills from "@/components/modules/Skills";

@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/common/StaticImage";
+
 import React from "react";
 import yogesh from "../../assets/yogesh-khadka.jpeg";
 
