@@ -1,7 +1,7 @@
 import Image from "@/components/common/StaticImage";
 
 import React from "react";
-import yogesh from "../../assets/yogesh-khadka.jpeg";
+import yogesh from "../../assets/yogeshabout.png";
 
 const About = () => {
   return (
@@ -15,13 +15,14 @@ const About = () => {
             Biography
           </h1>
           <p className="text-gray text-justify dark:text-light">
-            Passionate about learning and development, with the desire to learn
-            Frontend Development skills and apply them, adding value to the
-            firm. As I studied Electronics and Communication Engineering at the
-            Institute of Engineering, Thapathali Campus, I am eager to use my
-            skills in results-driven learning, understanding emerging frontend
-            technologies and using them for efficient and secured coding,
-            solving problems, and collaborating.
+            Passionate about the intersection of technology and education, I
+            wear multiple hats as a Frontend Developer, Lecturer, and Digital
+            Marketer. With a foundation in Electronics and Communication
+            Engineering, I bring a unique perspective to web development and
+            digital strategies. As a front-end developer, I craft user-friendly
+            interfaces that marry aesthetics with functionality. My role as a
+            Lecturer allows me to share my knowledge and inspire the next
+            generation of tech enthusiasts.
             {/* Break */}
             <br />
             <br />I have always been fascinated by the intersection of design
@@ -39,7 +40,12 @@ const About = () => {
 
         {/* Image Section */}
         <div className="flex-[0.3] md:ml-16 border-[1px] border-gray relative bg-light dark:bg-gray rounded-lg h-[16rem] w-[16rem]">
-          <Image src={yogesh} alt="yogesh khadka" className="p-8" />
+          <Image
+            src={yogesh}
+            alt="yogesh khadka"
+            unoptimized={true}
+            className="absolute h-full w-full object-contain"
+          />
           <div className="bg-gray h-[101%] w-[101%] absolute -bottom-1 -right-1 -z-10 rounded-lg" />
         </div>
       </div>

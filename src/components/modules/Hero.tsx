@@ -20,13 +20,13 @@ const Hero = () => {
           </span>
         </h1>
         <p className="mt-1 font-bold font-secondary text-[#536DFE] text-[1.2rem] md:text-[1rem] lg:text-[1.2rem]">
-          Frontend Developer
+          Frontend Enthusiast | Lecturer
         </p>
         <p className="mt-6 font-secondary text-gray dark:text-cream lg:max-w-[32rem]">
-          A passionate beginner frontend developer eager to explore the world of
-          web development. This is my digital playground where I showcase my
-          journey, projects, and skills as I embark on this exciting career
-          path.
+          Passionate about the intersection of technology and education, I wear
+          multiple hats as a Frontend Developer, Lecturer, and Digital Marketer.
+          With a foundation in Electronics and Communication Engineering, I
+          bring a unique perspective to web development and digital strategies.
         </p>
 
         {/* Buttons */}
